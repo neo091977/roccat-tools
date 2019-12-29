@@ -263,7 +263,7 @@ Tyon consists of a console application and a GUI application. It helps users to
 manipulate the Profiles and Settings of a Roccat Tyon mouse.
 
 %prep
-%setup -q -n roccat-tools-%{version}
+%setup -q -n roccat-%{version}
 %{__mkdir} build
 cd build
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="%{_prefix}" -DLIBDIR="%{_libdir}" -DUDEVDIR="%{udevdir}" -DEVENTHANDLER_PLUGIN_DIR="%{eventhandlerdir}" -DWITH_LUA=%{luaversion} ..
