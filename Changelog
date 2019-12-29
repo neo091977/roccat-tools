@@ -1,0 +1,510 @@
+5.9.0 2019-04-13
+
+ * Improved: Lua (the language) finder now handles version and release numbers
+ * Improved: Specfile
+ * Improved: RyosMKFX better gamma correction
+ * Added: RyosMKFX notification settings
+ * Fixed: RyosMKFX false modified profiles leading to unnecessary writes
+ * Fixed: Sova & Skeltr add new profile lost settings
+ * Fixed: Sova open application opened driver instead
+ * Fixed: Double audio notification on profile change when configuration GUI is running
+
+5.8.0 2019-03-29
+
+ * Improved: Switch to default profile now works if no window is active
+ * Fixed: Sova macro write
+ * Fixed: Sova rkp import
+
+5.7.0 2017-06-13
+
+ * Fixed: Firmware updates
+
+5.6.0 2017-01-03
+
+ * Added: Support for Skeltr
+ * Improved: Nyth calibration assistant gives hints on errors
+ * Fixed: Missing Sova key settings
+ * Fixed: Suora desktop link started RyosTKL config
+
+5.5.0 2016-10-21
+
+ * Added: Support for Sova Membrane and Mechanical
+
+5.4.0 2016-09-13
+
+ * Improved: Suora profile switching support
+ * Fixed: KonePureMilitary cpi settings
+ * Fixed: spec file post script for Suora
+ * Improved: Lua only mandatory when compiling for Ryos*
+ * Improved: Not using luac anymore
+ * Improved: Supporting and Prioritizing luajit over lua
+
+5.3.0 2016-08-05
+
+ * Added: Support for Suora
+ * Fixed: RyosMKFX rkp import problem
+
+5.2.0 2016-06-17
+
+ * Improved: RyosMKFX config app can emulate built-in effects
+ * Improved: Compatibility of enabled light settings of KonePure/XTD product range
+ * Added: Support for Amazons Kova 2016 black limited edition
+ * Fixed: KonePure* breathing effect did not work with custom color
+ * Fixed: Memory leaks
+ * Fixed: RyosMK* didn't save macro button settings
+
+5.1.1 2016-05-30
+
+ * Improved: Optimized Ryos* GUI event/thread handling
+ * Fixed: RyosMKFX can now import its exported rkps
+ * Fixed: Possible deadlocks in RyosMKFX GUI with activated script emulation
+ * Fixed: Ryos Lua effect script not getting release event for ESC key
+ * Fixed: Possible segfaults in Isku, IskuFX and Savu code
+
+5.1.0 2016-05-25
+
+ * Added: ryos.emulated() function in Lua scripting
+ * Improved: RyosMKFX now can preview scripted effects in GUI
+ * Improved: Shortcut dialog now has a combo box to select HID-usage-ids otherwise
+             not selectable. Also helps with modifier-only-shortcuts.
+ * Improved: Display of key settings now is more HID than X11 oriented.
+ * Improved: Stabilized Ryos communications
+ * Fixed: RyosMK and RyosMKGlow loading profile data
+ * Fixed: Memory leaks
+ * Fixed: RyosMKFX key illumination settings display
+
+5.0.0 2016-05-07
+
+ * Added: Fire effect Lua script
+ * Improved: All Ryos devices support per-profile Lua scripts
+ * Improved: Lua scripts are now respecting RyosMK and RyosTKL layer settings
+ * Fixed: RyosMKFX color conversions
+ * Fixed: Caps-Lock on Ryos devices
+ * Fixed: Spec file
+ * Fixed: Compilation of partial device list containing Ryos device
+
+4.0.0 2016-04-07
+
+ * Added: Ryos MK FX support
+ * Fixed: Nyth and Kova2016 variable profile count
+ * Improved: Lua scripting unified for all Ryos devices
+ * Improved: Ryos key color display
+ * Improved: Talk target support for Nyth and Kova2016 INVALIDATES STORED PROFILE DATA
+ * Improved: Better Swarm RMP format support INVALIDATES STORED PROFILE DATA
+ * Improved: Moved handedness selector for Kiro and Kova2016 to button page
+
+3.9.0 2016-02-09
+
+ * Added: File KNOWN_LIMITATIONS
+ * Added: Support for Kiro
+ * Fixed: Kova2016 handedness switching
+ * Fixed: Nyth and Kova2016 fixed colors
+ * Fixed: Nyth fin left/right were interchanged
+ * Fixed: Nyth sensitivity osd value display were off by one
+ * Fixed: Volume up/down settings were interchanged
+ * Fixed: Better Swarm RMP format support for Nyth, Kova2016, Kiro
+
+3.8.0 2016-01-30
+
+ * Added: Support for Kova 2016
+ * Added: SROM update functionality for KonePure*, KoneXTD*, Savu, Tyon
+ * Changed: Added liability statements for firmware/SROM updates
+ * Fixed: Some segfaults on missing rights
+ * Fixed: Devices hang on login
+
+3.7.1 2015-10-08
+
+ * Fixed: Compiler warnings
+ * Fixed: Nyth RyosMK RyosTKL Tyon had off-by-one problems with dbus messages
+          and device events
+ * Improved: Firmware updater now shows md5-sum
+
+3.7.0 2015-09-13
+
+ * Added: All devices now support driver state correction
+ * Added: Nyth has now partial support for rmp im-/export
+ * Added: Nyth supports variable profile numbers
+ * Fixed: Nyth profile activation from tab
+ * Fixed: Nyth macro format displayed names wrong
+ * Improved: Savu firmware updater uses failsave timings
+ * Improved: Profile tabs can now be resorted via drag'n'drop
+ * Improved: Driver state correction is now configurable in eventhandler
+ * Removed: Single profile save button
+
+3.6.1 2015-08-23
+
+ * Fixed: Tyon analog buttons showed more settings than they support
+ * Fixed: Tyon has no R_Ctrl shortcut but a L_Alt
+ * Fixed: Nyth sensitivity settings
+ * Added: Nyth was missing folder preset "Computer"
+
+3.6.0 2015-08-13
+
+ * Added: Support for Nyth
+ * Added: New soundfiles
+ * Added: Firmware updater for Ryos TKL Pro
+ * Removed: Firmware updater for Tyon
+
+3.5.0 2015-06-26
+
+ * Improved: Ryos multimedia button behaviour is now automatically corrected
+ * Improved: Software shortcuts (Kova[+], Pyra) are now kept active as long as
+             button is pressed.
+ * Fixed: Kone udev rule now sets file permissions again
+
+3.4.0 2015-05-23
+
+ * Added: Custom color support for KoneXTD and KonePure range devices
+ * Changed: Updated to libgaminggear uinput interface
+ * Fixed: Library dependencies
+ * Fixed: Added missing strings to be translated
+
+3.3.0 2015-04-18
+
+ * Added: German translations
+ * Added: Options to correct Ryos Multimedia button behaviour
+ * Added: Support for Roccat Kone Pure Black (handled by konepuremilitary)
+ * Added: Support for Lua 5.2
+ * Improved: Ryos range now supports keyboard layouts
+ * Improved: Gaminggearfx plugins allow NULL parameters
+ * Fixed: Build problems
+ * Fixed: Library dependencies, eliminating unresolved symbols and reducing overlinking
+ * Fixed: Gfx problems with some Kone range devices
+ * Fixed: RyosTKL Lua modules path
+
+3.2.0 2015-03-11
+
+ * Added: Support for Gaminggearfx
+ * Changed: cleaned up dbus interface
+ * Improved: spec file now uses standard macros
+
+3.1.0 2015-02-24
+
+ * Added: Support for Ryos TKL Pro
+ * Fixed: Dbus interface names
+ * Fixed: Cpi handling for KonePureOptical
+ * Fixed: OpenGui now opens right application
+ * Fixed: Some typos in error messages and manpages
+
+3.0.0 2015-02-08
+
+ * Added: Configuration option EVENTHANDLER_PLUGIN_DIR
+ * Changed: Replaced Python with Lua as RyosMK ripple-scripting engine. Also
+            support compilation has to be explicitly switched on with WITH_LUA
+ * Changed: Everything got a roccat prefix to prevent ambiguities, libraries additionally
+            got moved to library base folder, so no linker path modification is needed
+
+2.4.0 2015-01-25
+
+ * Added: Tyon support for TalkFX switch
+ * Fixed: Tyon firmware update ended with error, although working flawlessly
+ * Fixed: Tyon macros now support full 480 actions
+ * Fixed: Tyon talk works now with firmware 1.29
+ * Fixed: Macro saving did not work as expected
+
+2.3.0 2015-01-10
+
+ * Added: KoneXTD and IskuFX support for TalkFX switch
+ * Added: DFU version info readout for some devices
+ * Added: Support for RyosMK led macros
+ * Added: KoneXTD and IskuFX now conditionally execute TalkFX events
+ * Changed: Group roccat is now created as system group
+ * Changed: control option --update is now --firmware
+ * Improved: ryosconfig now shows that f-keys secondary function is triggered by FN, not easyshift
+ * Fixed: Isku/FX open-driver setting opened GUI twice
+ * Fixed: roccateventhandler wrong handling of dbus problems
+ * Fixed: Minor firmware version displayed wrong
+ * Fixed: Re-added uinput module rules for Arvo
+ * Fixed: Direct library dependencies
+ * Fixed: Added Tyon White to udev rules
+ * Fixed: Ryos macros under certain condition not saved in hardware
+ * Fixed: Sanitizing CPI values
+ * Kludge: Tyon macro format
+
+2.2.0 2014-09-13
+
+ * Improved? Savu and IskuFX color settings
+ * Added: Support for Tyon
+ * Improved: Arvo is now also userspace only
+ * Improved: Device scanner now uses less resources
+ * Fixed: Talk not releasing properly on profile change
+
+2.1.0 2014-07-04
+
+ * Fixed: Isku and KonePlus product range now uses right default values
+ * Fixed: KoneXTDOptival and KonePureMilitary eventhandling
+
+2.0.0 2014-06-07
+
+ * Added: Support for Kone XTD Optical
+ * Fixed: Savu cpi and sense notifications
+ * Fixed: Savu open driver firing twice
+ * Fixed: Ryos and KonePureMilitary data read problems
+ * Fixed: Ryos and KonePureMilitary eventhandling
+ * Fixed: Read Ryos light macro wrongly classified as modified
+ * Fixed: Lua config app crashes
+ * Fixed: Kova[+] sensitivity notification configuration
+ * Fixed: Compilation problem with Python and newer glib
+ * Improved: Devices except Arvo and Kone are now userspace only
+ * Improved: Graphical firmware updaters for all devices and console update merged
+             to *control apps
+ * Improved: Removed libusb as dependency
+
+1.6.0 2014-05-18
+
+ * Added: Ryos now supports Python scripted ripple effects
+ * Added: Support for Kone Pure Military
+ * Fixed: Color conversions for Kone Pure range
+ * Fixed: OpenDriver opened wrong GUI for KonepureOptical
+ * Improved: Ryos support now complete in userspace
+ * Improved: roccateventhandler can print config and profile dirs
+ * Moved more code to libgaminggear
+
+1.5.1 2014-05-04
+
+ * Fixed: Macro saving issues with KonePure family devices
+ * Fixed: unconfirmed segfault on startup
+
+1.5.0 2014-04-13
+
+ * Added: Setting default profile via ryoscontrol application
+ * Fixed: Activating profile via ryoscontrol application was off by 1
+ * Fixed: Ryos "<" key light indication not working
+ * Fixed: Saving profiles in devices in *control applications didn't work
+ * Moved code to libgaminggear which is now a mandatory dependency
+
+1.4.1 2014-02-27
+
+ * Fixed: segfaults
+
+1.4.0 2014-02-07
+
+ * Fixed: Ryos "open driver" key settings opened config gui twice
+ * Fixed: Kone[+] variants read wrong data after device reset
+ * Improved: roccateventhandler has --verbose command line option
+ * Improved: Removed settings page, moving active profile selection to notebook tabs
+             and other functions to device menu items
+ * Improved: Device reset now with safety dialog
+
+1.3.0 2014-01-11
+
+ * Fixed: KonePure and KonePureOptical macro problems
+ * Fixed: Actual profile changing twice when using settings tab
+ * Fixed: Multiple device warnings on replug after firmware update
+ * Improved: Default profile can now be switched off
+ * Improved: Sound playback now with per-device configurable volume
+ * Improved: Sensitivity change now supports audio notifications
+ * Improved: Shortcut dialog allows toggling modifier checkboxes with key press
+ * Improved: Profile save dialogs show filename proposition and add extension if needed
+ * Changed: Device reset now lives in misc menu
+
+1.2.0 2013-12-28
+
+ * Improved: New device scanner with support for future userspace-only implementations
+ * Fixed: Memory leaks
+ * Improved: finer grained button inheritance if hardware differs from rmp/rkp
+   for Kone[+], KoneXTD, KonePure, KonePureOptical, Kova[+], RyosMK*
+ * Fixed: segfault on first autostart on Mint16
+ * Fixed: typo in post_install script
+ * Removed installed development headers
+
+1.1.0 2013-11-19
+
+ * Fixed: Segfault when removing device with window monitor running
+ * Introduced install helper scripts
+ * Ryos: Key view in control now reflects blinking key illumination
+ * Ryos: Added live illumination recording dialog
+ * Ryos: Fixed thumbster and FN key behaviour
+ * Spec-file: Improved handling of udevdir and parallel make
+
+1.0.0 2013-11-01
+
+ * Updated TalkFX/RyosSDK dbus interface
+ * Changed location and names of user specific application configurations
+ * Changed location of hardware specific profile data to /var/lib/roccat
+ * Changed gamefile functionality
+
+0.23.0 2013-10-22
+
+ * Ryos: Fixed udev rules to work with Ubuntu 13.10
+ * Updated Talk to Talk2
+ * Ryos: Full Talk functionality
+ * Ryos: Added RippleFX support
+ * Ryos: Remap now swaps keys
+
+0.22.0 2013-10-16
+
+ * Ryos: Support added
+ * KonePureOptical: Fixed eventhandler
+ * Kone[+], KoneXTD: Fixed import of newer rmp format
+ * Fixed: Color selectors not working with dark GUI themes
+ * Improved: Slider handling
+
+0.21.0 2013-08-29
+
+ * Eventhandler now autostarts
+ * KonePureOptical: Support added
+ * KonePure: fixed color selection and profile changes
+ * Kova[+]: removed easyshift from buttons where it doesn't work
+ * Added reset function to control applications
+ * Isku/FX: Added support for new 5 byte chardev events
+ * KonePure: Fixed eventhandling
+
+0.20.0 2013-05-21
+
+ * keycode <--> hid translation now works with evdev and nothing else
+
+0.19.0 2013-05-18
+
+ * Improved Key ComboBox handling
+ * Isku/FX: Easyzone key labels and Standard settings now show layout dependent values
+ * Fixed wrong keycode <--> hid translation mechanism
+ * Macro editor: Disabled recording of autorepeat events
+ * Software macro execution now as threads instead of forked processes
+
+0.18.0 2013-04-19
+
+ * Arvo: Kone: Added support for macro loops (non standard)
+ * Kone: Added support for profile names (non standard)
+ * Added profile name to profile change osd notifications
+ * Decreased resource footprint
+
+0.17.0 2013-04-07
+
+ * Removed libunique build dependency
+ * Replaced roccatgui and its plugins with roccateventhandler
+ * Arvo: Fixed read problems from too swift hardware accesses
+ * Arvo: Added support for macro mouse events
+ * Arvo: Added support for multimedia events
+ * Macro editor: Fixed widget sensitivities
+ * IskuFX: Fixed Talk
+ * Koneplus: KoneXTD: KonePure: Added fallback for old old kernel modules
+ * Kone: Fixed wrong profile index values
+ * Kone: Added support for multimedia events
+ * Pyra: Fixed info fallback for old kernel modules
+ * Reduced unused library dependencies leading to smaller libs and executables
+
+0.16.1 2013-02-18
+
+ * Improved device names in desktop entries
+ * Color buttons keep color when hovering over them
+ * IskuFX: TalkFX support added
+
+0.16.0 2013-02-16
+
+ * IskuFX: Support added
+ * Fixed inter device talk functionality
+ * Dialogs for direct sensor access
+ * Marco editor: Added Paste button
+ * Printable characters in macros or shortcuts are printed as such instead of character name
+ * Isku: Improved Live Recording and brightness button handling
+ * Lua: Fixed segfault
+ * Removed status icon, configuration applications are standalone now
+ * Build system: Improved to handle dependencies and reduce building of unneeded code
+
+0.15.0 2012-12-28
+
+ * Macro editor: Fixed insensitive record button
+ * Macro editor: All import/export is now done in macro editor
+ * Macro editor: Now supports import/export for Valo format
+ * Timer editor: Fixed crash on missing data
+ * Timer editor: All import/export is now done in timer editor
+   All timer menus in device settings have been replaced with a single Edit/Timers entry
+ * Isku: Live recorded macros are now exported to global macro list under "Isku MLR"
+ * KonePure: Now supported
+
+0.14.1 2012-12-05
+
+ * KoneXTD: Can now import Kone[+] profiles
+ * Kova[+]: Fixed wrong cpi values
+ * Fixed spec file
+ * libroccatwidget: new shared lib which contains all gtk related things
+
+0.14.0 2012-11-17
+
+ * Kone[+]: Added support for device reset
+ * Kone[+]: Reduced unnecessary write actions
+ * Kone[+]: Renamed easyaim options
+ * Kone[+]: Fixed sensor register read
+ * KoneXTD: Now supported
+ * Kova[+]: Added support for device reset
+ * Kova[+]: Now uses hardware data to update rmp
+ * Lua: Improved surface check
+ * Pyra: Added button for device reset
+ * Savu: "Fixed" access error due to initialization timeout when plugging in
+ * Savu: Added button for device reset
+ * Updated talkfx functionality
+ * Cleanups and fixes
+
+0.13.1 2012-10-16
+
+ * Fixed couple typos and memory leaks
+ * Added Lua support
+
+0.13.0 2012-09-30
+
+ * Switched from libusb 0.1 to 1.0
+ * Updated udev rules to work with hid-generic and generic-usb
+ * Updated udev rules to load kernel modules as fallback
+
+0.12.5 2012-08-26
+
+ * Added color flow support for Savu
+ * Added support for direct sensor interaction for koneplus
+
+0.12.4 2012-07-04
+
+ * Added prior unimplemented functions for savucontrol
+ * Added support for direct sensor interaction to savucontrol
+ * Added Sensor SROM_ID information to Savu info frame
+ * Changed palette color button implementation for Kone[+], Kova[+] and Savu
+
+0.12.3 2012-06-25
+
+ * Added support for savu
+ * Moved udev rules from /etc/udev/rules.d to /lib/udev/rules.d with
+   automatic install dir estimation (/lib or /usr/lib) for Fedora 17
+
+0.12.2 2012-05-26
+
+ * Only needed udev rules are installed
+ * Fixed cmake find modules, not using PKG_CONFIG_FOUND anymore for cmake 2.8.8
+
+0.12.1 2012-03-09
+
+ * Kone[+]: Fixed an error in calibration assistant when going back
+ * Kova[+], Kone[+]: Added Easywheel Aero Flip 3D button setting
+ * Kone[+]: Partially removed easyshift from buttons that don't support it
+ * Kova[+]: Removed easyshift from buttons that don't support it
+ * Kova[+]: Removed unsupported open_driver functionality
+ * Kova[+]: Fixed multiple event executions
+ * Fixed segfault in process monitor
+ * OSD notifications now with app name
+
+0.12.0 2012-02-24
+
+ * Added Process scanning functionality
+ * Fixed segfault on Arvo startup
+ * Unified abilities of *control applications.
+ * *control applications don't support read/write of binary profile data anymore.
+
+0.11.0 2012-01-25
+
+ * Replaced libudev with gudev to get rid of threading
+ * Fixed "konepluscontrol --actual-profile" returning profile numbers in range 0-4
+
+0.10.1 2012-01-15
+
+ * Application doesn't exit/segfault on missing filesystem permissions
+ * Updated udev rules to call *control only once (this also may fix an issue with
+   newer udev versions - unconfirmed)
+ * Lowered memory footprint of unused modules
+ * Readded missing koneplusupdate and iskuupdate firmware updater
+ * Sorting of columns in timer editor can now be changed
+ * Fixed issue where not all macros were inserted in macro_editor's treeview
+ * Fixed issue where timer_list_dialog crashed on missing keyfile
+ * Adding/removing lines in timer editor now sets list modified
+
+0.10.0 2012-01-06
+
+ * initial version

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Tyon config
+Name[de]=Tyon Konfiguration
+Comment=Modify Roccat Tyon device settings
+Comment[de]=Roccat Tyon Einstellungen ändern
+Type=Application
+Exec=roccattyonconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Ryos TKL config
+Name[de]=Ryos TKL Konfiguration
+Comment=Modify Roccat Ryos TKL device settings
+Comment[de]=Roccat Ryos TKL Einstellungen ändern
+Type=Application
+Exec=roccatryostklconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

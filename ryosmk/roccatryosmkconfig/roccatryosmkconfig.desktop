@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Ryos MK config
+Name[de]=Ryos MK Konfiguration
+Comment=Modify Roccat Ryos MK device settings
+Comment[de]=Roccat Ryos MK Einstellungen ändern
+Type=Application
+Exec=roccatryosmkconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

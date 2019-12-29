@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Kone config
+Name[de]=Kone Konfiguration
+Comment=Modify Roccat Kone device settings
+Comment[de]=Roccat Kone Einstellungen ändern
+Type=Application
+Exec=roccatkoneconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

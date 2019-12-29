@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+  "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node name="/org/roccat/Lua">
+  <interface name="org.roccat.Lua">
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="lua_dbus_server_cb"/>
+    <method name="OpenGui">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+    </method>
+  </interface>
+</node>

@@ -1,0 +1,38 @@
+.\" Process this file with
+.\" groff -man -Tutf8 roccatluacontrol.1
+.\"
+.TH ROCCATLUACONTROL 1 "OKTOBER 2012" "Stefan Achatz" "Benutzerhandbücher"
+.SH NAME
+roccatluacontrol \- Ein Hilfsprogramm um die erweiterten Funktionen der Roccat
+Lua zu nutzen.
+.SH SYNTAX
+.B roccatluacontrol
+[
+.B -hv
+] [
+.B -a
+.i DATEINAME
+] [
+.BI --activate-rmp= DATEINAME
+] [
+.B --help
+] [
+.B --version
+]
+.SH BESCHREIBUNG
+Diese Konsolenanwendung ermöglicht es die erweiterten Funktionen der Roccat
+Lua zu nutzen.
+.SH OPTIONEN
+.IP "-h, --help"
+Zeige die Hilfeliste.
+.IP "-a, --activate-rmp=DATEINAME"
+Aktiviert das angegebene Profil.
+.IP "-v, --version"
+Zeige die Programmversion.
+.SH BEISPIELE
+.IP "roccatluacontrol -a profile.rmp"
+Liest das Profil aus der Datei
+.B profile.rmp
+und speichert es in der Maus.
+.SH AUTOR
+Stefan Achatz <erazor_de@users.sourceforge.net>

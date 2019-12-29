@@ -1,0 +1,37 @@
+.\" Process this file with
+.\" groff -man -Tutf8 roccatluacontrol.1
+.\"
+.TH ROCCATLUACONTROL 1 "OCTOBER 2012" "Stefan Achatz" "User Manuals"
+.SH NAME
+roccatluacontrol \- a tool to roccatcontrol the extended capabilities of a Roccat
+Lua mouse.
+.SH SYNOPSIS
+.B roccatluacontrol
+[
+.B -hv
+] [
+.B -a
+.I FILENAME
+] [
+.BI --activate-rmp= FILENAME
+] [
+.B --help
+] [
+.B --version
+]
+.SH DESCRIPTION
+This console application lets you modify profiles of a Roccat Lua mouse.
+.SH OPTIONS
+.IP "-h, --help"
+Give the help list.
+.IP "-a, --activate-rmp=FILENAME"
+Activates the given profile.
+.IP "-v, --version"
+Print program version.
+.SH EXAMPLES
+.IP "roccatluacontrol -a profile.rmp"
+Reads the profile from file
+.B profile.rmp
+and saves it in the mouse.
+.SH AUTHOR
+Stefan Achatz <erazor_de@users.sourceforge.net>

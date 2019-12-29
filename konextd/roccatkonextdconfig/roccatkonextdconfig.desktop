@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=KoneXTD config
+Name[de]=KoneXTD Konfiguration
+Comment=Modify Roccat KoneXTD device settings
+Comment[de]=Roccat KoneXTD Einstellungen ändern
+Type=Application
+Exec=roccatkonextdconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

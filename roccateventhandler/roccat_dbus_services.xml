@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+  "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node name="/org/roccat">
+  <interface name="org.roccat">
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="roccat_dbus_server_cb"/>
+    <method name="TalkfxSetLedRgb">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+      <arg type="u" name="effect" direction="in"/>
+      <arg type="u" name="ambient_color" direction="in"/>
+      <arg type="u" name="event_color" direction="in"/>
+    </method>
+    <method name="TalkfxRestoreLedRgb">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+    </method>
+    <method name="TalkfxRyosSetSdkMode">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+      <arg type="b" name="state"/>
+    </method>
+    <method name="TalkfxRyosSetAllLeds">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+      <arg type="ay" name="data"/>
+    </method>
+    <method name="TalkfxRyosTurnOnAllLeds">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+    </method>
+    <method name="TalkfxRyosTurnOffAllLeds">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+    </method>
+    <method name="TalkfxRyosSetLedOn">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+      <arg type="y" name="index"/>
+    </method>
+    <method name="TalkfxRyosSetLedOff">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+      <arg type="y" name="index"/>
+    </method>
+    <method name="TalkfxRyosAllKeyBlinking">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+      <arg type="u" name="interval"/>
+      <arg type="u" name="count"/>
+    </method>
+  </interface>
+</node>

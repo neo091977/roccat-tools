@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Kiro config
+Name[de]=Kiro Konfiguration
+Comment=Modify Roccat Kiro device settings
+Comment[de]=Roccat Kiro Einstellungen ändern
+Type=Application
+Exec=roccatkiroconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

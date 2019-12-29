@@ -1,0 +1,2 @@
+#!/bin/sh
+yast -i gcc cmake dbus-1-glib-devel gtk2-devel libgudev-1_0-devel libX11-devel

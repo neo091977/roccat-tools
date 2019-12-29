@@ -1,0 +1,102 @@
+.\" Process this file with
+.\" groff -man -Tutf8 roccatryostklcontrol.1
+.\"
+.TH ROCCATRYOSTKLCONTROL 1 "FEBRUARY 2015" "Stefan Achatz" "User Manuals"
+.SH NAME
+roccatryostklcontrol \- a tool to control the extended capabilities of Roccat
+Ryos TKL keyboards
+.SH SYNOPSIS
+.B roccatryostklcontrol
+[
+.B -fhv
+] [
+.B -a
+.I NUMBER
+] [
+.B -d
+.I NUMBER
+] [
+.B -l
+.I NUMBER
+] [
+.B -r
+.I FILENAME
+] [
+.B -s
+.I NUMBER
+] [
+.B -w
+.I FILENAME
+] [
+.BI --activate-profile= NUMBER
+] [
+.B --actual-profile
+] [
+.B --driver-off
+] [
+.B --driver-on
+] [
+.BI --firmware= FILENAME
+] [
+.B --help
+] [
+.BI --led-firmware= FILENAME
+] [
+.BI --load= NUMMER
+] [
+.B --read-firmware
+] [
+.BI --read-rkp= FILENAME
+] [
+.BI --reset
+] [
+.BI --save= NUMMER
+] [
+.B --version
+] [
+.BI --write-rkp= FILENAME
+]
+.SH DESCRIPTION
+This console application lets you modify profiles of Roccat Ryos TKL keyboards.
+.SH OPTIONS
+.IP "-h, --help"
+Give the help list.
+.IP "-a, --activate-profile=NUMBER"
+Activates the given profile. Please mind that this permanently sets the startup
+profile. That means the given profile will be active each time the Ryos starts up.
+.IP "--actual-profile"
+Returns the number of the active profile.
+.IP "--driver-off"
+Deactivates Windows driver state.
+.IP "--driver-on"
+Activates Windows driver state.
+.IP "--firmware=FILENAME"
+Updates the devices firmware with the given image file. In case of an error this
+process can be repeated. Both firmwares have to be updated together.
+.IP "-f, --read-firmware"
+Returns the firmware version of the Ryos.
+.IP "--led-firmware=FILENAME"
+Updates the led firmware with the given image file. In case of an error this
+process can be repeated. Both firmwares have to be updated together.
+.IP "-l, --load=NUMBER"
+Loads the profile from keyboard and deposits it in memory. If they differ a warning
+is given and the keyboard profile is used further.
+.IP "-r, --read-rkp=FILENAME"
+Reads an rkp-file into memory.
+.IP "--reset"
+Resets the device to factory default settings.
+.IP "-s, --save=NUMBER"
+Saves the profile from memory to keyboard and deposit.
+.IP "-v, --version"
+Print program version.
+.IP "-w, --write-rkp=FILENAME"
+Writes the profile from memory as rkp-file.
+.SH EXAMPLES
+.IP "roccatryostklcontrol -r profile.rkp -s 1"
+Reads the profile from file
+.B profile.rkp
+and saves the result as profile number
+.B 1
+in the keyboard and the deposited profile.
+.SH AUTHOR
+Stefan Achatz <erazor_de@users.sourceforge.net>

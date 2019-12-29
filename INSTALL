@@ -1,0 +1,137 @@
+* First make sure the dependencies are met
+
+  * If you have an old Kone (ROC-11-500, ROC-11-501) you, in certain cases, may
+    additionally need my kmod-roccat package. If not done already, download it
+	from here
+    
+    http://sourceforge.net/projects/roccat/
+    
+    and install it according to the contained instructions.
+
+  * You need libgaminggear to be installed before continuing with roccat-tools.
+    Download it here
+	
+	http://sourceforge.net/projects/libgaminggear/
+	
+	and install it according to the contained instructions.
+
+  * You will need some development tools and header packages. For ease of use,
+    there are some install_deps_* scripts for various distributions in the scripts
+    folder of this package, which you can execute or take as a guideline.
+
+  * The Lua programming language is mandatory also, but it's your task to deside
+    which version to use and to install the needed development packages. Supported
+    are versions 5.1 and up. The package names differ wildly between distributions,
+    hence the extra work.
+    
+* Compilation and Installation
+
+  In any shell type the following:
+
+  $ tar -xjf roccat-tools-X.X.X.tar.bz2
+  $ cd roccat-tools-X.X.X
+  $ mkdir build
+  $ cd build
+  $ cmake -DCMAKE_INSTALL_PREFIX="/usr" -DWITH_LUA=5.3 ..
+  $ make
+  $ sudo make install
+
+  * Replace the Lua version with your actual.
+  
+  * It is strongly recommended to install everything in /usr instead of the default
+    directory /usr/local.
+
+  * Optional cmake entries you can set with -D:
+
+    * LIBDIR                    If cmake doesn't find the right install directory
+      for libraries, you can set it manually. For rpm based 64bit systems that's
+      normally $PREFIX/lib64, but dpkg based systems use something like
+      $PREFIX/lib/x86_64-linux-gnu/
+
+    * UDEVDIR                   If cmake doesn't find the right install directory
+      for udev rules, you can set it manually. Normally it's /lib/udev/rules.d
+      but Fedora 17 started to merge /lib into /usr/lib completely.
+
+    * DEVICES                   If omitted, tools for all devices are compiled and
+      installed. You can give a semicolon separated list with as many supported
+      devices as you want e.g. -DDEVICES="isku;koneplus".
+
+    * EVENTHANDLER_PLUGIN_DIR   Set this if you want to manually change the install
+      directory for eventhandler plugins. Default is the same as LIBDIR.
+
+* Last steps
+
+  * Preparation the fast way...
+
+    * Execute the scripts/post_install script with sudo, not as root.
+
+  * ...or manually
+
+    * Make the libraries known to the dynamic linker
+
+      Just call
+
+      $ sudo /sbin/ldconfig
+
+      after installation.
+
+    * Refresh the icon cache
+
+      Call the command
+
+      $ sudo touch --no-create /usr/share/icons/hicolor
+
+      where /usr has to be substituted with your install prefix.
+      This has to be done only for the first time.
+
+    * Create a group called roccat.
+
+      $ sudo groupadd --system roccat
+
+    * Create a folder for systemwide profile storage
+
+      $ sudo mkdir /var/lib/roccat
+      $ sudo chown root:roccat /var/lib/roccat
+      $ sudo chmod 2770 /var/lib/roccat
+
+    * To be on the save side you can update the udev rules
+
+      $ sudo udevadm control --reload-rules
+
+  * To use the device features as normal user you have to add yourself and all
+    other users to group roccat.
+
+    $ sudo usermod -a -G roccat $USER
+
+  * Do a logout/login to apply your new group ownership and replug your device
+    and everything should work as expected.
+
+* Using the software under GNOME
+
+  * The GUIs can be found in the menu System/Settings.
+  
+  * The eventhandler is autostarted via a .desktop file in /etc/xdg/autostart.
+	
+* Building an rpm
+
+  The package contains the file roccat-tools.spec that fits at least fedora which
+  you can use.
+  The easiest way is to write
+  
+  $ rpmbuild -ta --clean roccat-tools-X.X.X.tar.bz2
+  
+  which creates all rpms on the fly.
+
+  * optional build variables
+
+    * udevdir If you wan't the udev rules to be installed in /usr/lib/udev/rules.d
+      instead of the default /lib/udev/rules.d invoke rpmbuild like this:
+      rpmbuild -ta --clean roccat-tools-X.X.X.tar.bz2 --define 'udevdir /usr/lib/udev/rules.d'
+
+    * eventhandlerdir Use this if your distribution forces you to use another directory
+      than the default libdir.
+    
+    * gfx_plugindir Use this if you installed libgaminggear with a non-standard
+      directory for the gfx plugins and are not using pkg-config.
+    
+    * luaversion Specify the Lua version, default is the highest tested version.

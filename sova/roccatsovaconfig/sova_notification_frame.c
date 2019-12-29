@@ -1,0 +1,122 @@
+/*
+ * This file is part of roccat-tools.
+ *
+ * roccat-tools is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * roccat-tools is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with roccat-tools. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#include "sova_notification_frame.h"
+#include "sova_sound_feedback_combo_box.h"
+#include "roccat_notification_type_combo_box.h"
+#include "roccat_volume_scale.h"
+#include "i18n.h"
+
+#define SOVA_NOTIFICATION_FRAME_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST((klass), SOVA_NOTIFICATION_FRAME_TYPE, SovaNotificationFrameClass))
+#define IS_SOVA_NOTIFICATION_FRAME_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE((klass), SOVA_NOTIFICATION_FRAME_TYPE))
+#define SOVA_NOTIFICATION_FRAME_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE((obj), SOVA_NOTIFICATION_FRAME_TYPE, SovaNotificationFramePrivate))
+
+typedef struct _SovaNotificationFrameClass SovaNotificationFrameClass;
+typedef struct _SovaNotificationFramePrivate SovaNotificationFramePrivate;
+
+struct _SovaNotificationFrame {
+	GtkFrame parent;
+	SovaNotificationFramePrivate *priv;
+};
+
+struct _SovaNotificationFrameClass {
+	GtkFrameClass parent_class;
+};
+
+struct _SovaNotificationFramePrivate {
+	GtkComboBox *typing_feedback;
+	GtkComboBox *timer_notification_type;
+	GtkComboBox *profile_notification_type;
+	GtkComboBox *live_recording_notification_type;
+	GtkComboBox *sleep_notification_type;
+	GtkComboBox *wakeup_notification_type;
+	RoccatVolumeScale *notification_volume;
+};
+
+G_DEFINE_TYPE(SovaNotificationFrame, sova_notification_frame, GTK_TYPE_FRAME);
+
+GtkWidget *sova_notification_frame_new(void) {
+	return GTK_WIDGET(g_object_new(SOVA_NOTIFICATION_FRAME_TYPE, NULL));
+}
+
+static void sova_notification_frame_init(SovaNotificationFrame *notification_frame) {
+	SovaNotificationFramePrivate *priv = SOVA_NOTIFICATION_FRAME_GET_PRIVATE(notification_frame);
+	GtkWidget *table;
+
+	notification_frame->priv = priv;
+
+	table = gtk_table_new(7, 2, FALSE);
+	gtk_container_add(GTK_CONTAINER(notification_frame), table);
+
+	gtk_table_attach(GTK_TABLE(table), gtk_label_new(_("Timer")), 0, 1, 0, 1, 0, GTK_EXPAND, 0, 0);
+	priv->timer_notification_type = GTK_COMBO_BOX(roccat_notification_type_combo_box_new());
+	gtk_table_attach(GTK_TABLE(table), GTK_WIDGET(priv->timer_notification_type), 1, 2, 0, 1, GTK_EXPAND | GTK_FILL, GTK_EXPAND, 0, 0);
+
+	gtk_table_attach(GTK_TABLE(table), gtk_label_new(_("Profile")), 0, 1, 1, 2, 0, GTK_EXPAND, 0, 0);
+	priv->profile_notification_type = GTK_COMBO_BOX(roccat_notification_type_combo_box_new());
+	gtk_table_attach(GTK_TABLE(table), GTK_WIDGET(priv->profile_notification_type), 1, 2, 1, 2, GTK_EXPAND | GTK_FILL, GTK_EXPAND, 0, 0);
+
+	gtk_table_attach(GTK_TABLE(table), gtk_label_new(_("Live recording")), 0, 1, 2, 3, 0, GTK_EXPAND, 0, 0);
+	priv->live_recording_notification_type = GTK_COMBO_BOX(roccat_notification_type_combo_box_new());
+	gtk_table_attach(GTK_TABLE(table), GTK_WIDGET(priv->live_recording_notification_type), 1, 2, 2, 3, GTK_EXPAND | GTK_FILL, GTK_EXPAND, 0, 0);
+
+	gtk_table_attach(GTK_TABLE(table), gtk_label_new(_("Sleep")), 0, 1, 3, 4, 0, GTK_EXPAND, 0, 0);
+	priv->sleep_notification_type = GTK_COMBO_BOX(roccat_notification_type_combo_box_new());
+	gtk_table_attach(GTK_TABLE(table), GTK_WIDGET(priv->sleep_notification_type), 1, 2, 3, 4, GTK_EXPAND | GTK_FILL, GTK_EXPAND, 0, 0);
+
+	gtk_table_attach(GTK_TABLE(table), gtk_label_new(_("Wakeup")), 0, 1, 4, 5, 0, GTK_EXPAND, 0, 0);
+	priv->wakeup_notification_type = GTK_COMBO_BOX(roccat_notification_type_combo_box_new());
+	gtk_table_attach(GTK_TABLE(table), GTK_WIDGET(priv->wakeup_notification_type), 1, 2, 4, 5, GTK_EXPAND | GTK_FILL, GTK_EXPAND, 0, 0);
+
+	gtk_table_attach(GTK_TABLE(table), gtk_label_new(_("Typing")), 0, 1, 5, 6, 0, GTK_EXPAND, 0, 0);
+	priv->typing_feedback = GTK_COMBO_BOX(sova_sound_feedback_combo_box_new());
+	gtk_table_attach(GTK_TABLE(table), GTK_WIDGET(priv->typing_feedback), 1, 2, 5, 6, GTK_EXPAND | GTK_FILL, GTK_EXPAND, 0, 0);
+
+	gtk_table_attach(GTK_TABLE(table), gtk_label_new(_("Volume")), 0, 1, 6, 7, 0, GTK_EXPAND, 0, 0);
+	priv->notification_volume = ROCCAT_VOLUME_SCALE(roccat_volume_scale_new());
+	gtk_table_attach(GTK_TABLE(table), GTK_WIDGET(priv->notification_volume), 1, 2, 6, 7, GTK_EXPAND | GTK_FILL, GTK_EXPAND, 0, 0);
+
+	gtk_frame_set_label(GTK_FRAME(notification_frame), _("Notifications"));
+}
+
+static void sova_notification_frame_class_init(SovaNotificationFrameClass *klass) {
+	g_type_class_add_private(klass, sizeof(SovaNotificationFramePrivate));
+}
+
+void sova_notification_frame_set_from_profile_data(SovaNotificationFrame *notification_frame, SovaProfileData const *profile_data) {
+	SovaNotificationFramePrivate *priv = notification_frame->priv;
+
+	sova_sound_feedback_combo_box_set_value(priv->typing_feedback, sova_profile_data_get_sound_feedback_typing(profile_data));
+	roccat_notification_type_combo_box_set_value(priv->timer_notification_type, sova_profile_data_get_timer_notification_type(profile_data));
+	roccat_notification_type_combo_box_set_value(priv->profile_notification_type, sova_profile_data_get_profile_switch_notification_type(profile_data));
+	roccat_notification_type_combo_box_set_value(priv->live_recording_notification_type, sova_profile_data_get_macro_record_notification_type(profile_data));
+	roccat_notification_type_combo_box_set_value(priv->sleep_notification_type, sova_profile_data_get_sleep_notification_type(profile_data));
+	roccat_notification_type_combo_box_set_value(priv->wakeup_notification_type, sova_profile_data_get_wakeup_notification_type(profile_data));
+	roccat_volume_scale_set_value(priv->notification_volume, sova_profile_data_get_sound_feedback_volume(profile_data));
+}
+
+void sova_notification_frame_update_profile_data(SovaNotificationFrame *notification_frame, SovaProfileData *profile_data) {
+	SovaNotificationFramePrivate *priv = notification_frame->priv;
+
+	sova_profile_data_set_sound_feedback_typing(profile_data, sova_sound_feedback_combo_box_get_value(priv->typing_feedback));
+	sova_profile_data_set_timer_notification_type(profile_data, roccat_notification_type_combo_box_get_value(priv->timer_notification_type));
+	sova_profile_data_set_profile_switch_notification_type(profile_data, roccat_notification_type_combo_box_get_value(priv->profile_notification_type));
+	sova_profile_data_set_macro_record_notification_type(profile_data, roccat_notification_type_combo_box_get_value(priv->live_recording_notification_type));
+	sova_profile_data_set_sleep_notification_type(profile_data, roccat_notification_type_combo_box_get_value(priv->sleep_notification_type));
+	sova_profile_data_set_wakeup_notification_type(profile_data, roccat_notification_type_combo_box_get_value(priv->wakeup_notification_type));
+	sova_profile_data_set_sound_feedback_volume(profile_data, roccat_volume_scale_get_value(priv->notification_volume));
+}

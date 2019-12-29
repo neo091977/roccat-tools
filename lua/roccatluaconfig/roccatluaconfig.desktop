@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Lua config
+Name[de]=Lua Konfiguration
+Comment=Modify Roccat Lua device settings
+Comment[de]=Roccat Lua Einstellungen ändern
+Type=Application
+Exec=roccatluaconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

@@ -1,0 +1,48 @@
+.\" Process this file with
+.\" groff -man -Tutf8 roccatsuoracontrol.1
+.\"
+.TH ROCCATSUORACONTROL 1 "AUGUST 2016" "Stefan Achatz" "User Manuals"
+.SH NAME
+roccatsuoracontrol \- a tool to control the extended capabilities of Roccat
+Suora keyboards.
+.SH SYNOPSIS
+.B roccatsuoracontrol
+[
+.B -fhv
+] [
+.BI -a NAME
+] [
+.BI --activate-profile NAME
+] [
+.B --game-mode-off
+] [
+.B --game-mode-on
+] [
+.B --help
+] [
+.B --read-firmware
+] [
+.B --reset
+] [
+.B --version
+]
+.SH DESCRIPTION
+This console application lets you modify profiles of Roccat Suora keyboards.
+.SH OPTIONS
+.IP "-h, --help"
+Give the help list.
+.IP "-a, --activate-profile=NAME"
+Loads the named profile from the list of available profiles and stores it in the
+device.
+.IP "--game-mode-off"
+Deactivates game mode.
+.IP "--game-mode-on"
+Activates game mode.
+.IP "-f, --read-firmware"
+Returns the firmware version of the Suora.
+.IP "--reset"
+Resets the device to factory default settings.
+.IP "-v, --version"
+Print program version.
+.SH AUTHOR
+Stefan Achatz <erazor_de@users.sourceforge.net>

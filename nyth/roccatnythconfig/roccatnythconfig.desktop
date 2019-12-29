@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Nyth config
+Name[de]=Nyth Konfiguration
+Comment=Modify Roccat Nyth device settings
+Comment[de]=Roccat Nyth Einstellungen ändern
+Type=Application
+Exec=roccatnythconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

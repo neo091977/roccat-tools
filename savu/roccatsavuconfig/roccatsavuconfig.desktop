@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Savu config
+Name[de]=Savu Konfiguration
+Comment=Modify Roccat Savu device settings
+Comment[de]=Roccat Savu Einstellungen ändern
+Type=Application
+Exec=roccatsavuconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

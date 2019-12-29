@@ -1,0 +1,15 @@
+ADD_EXECUTABLE(roccatskeltrcontrol skeltrcontrol.c)
+
+TARGET_LINK_LIBRARIES(roccatskeltrcontrol
+  libroccatskeltr
+  libroccat
+  ${GAMINGGEAR0_LIBRARY}
+  ${GLIB2_LIBRARIES}
+)
+
+INSTALL(TARGETS roccatskeltrcontrol
+  DESTINATION bin
+  PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
+)
+
+ADD_SUBDIRECTORY(man)

@@ -1,0 +1,14 @@
+ADD_EXECUTABLE(roccatkirocontrol kirocontrol.c)
+
+TARGET_LINK_LIBRARIES(roccatkirocontrol
+  libroccatkiro
+  libroccat
+  ${GLIB2_LIBRARIES}
+)
+
+INSTALL(TARGETS roccatkirocontrol
+  DESTINATION bin
+  PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
+)
+
+ADD_SUBDIRECTORY(man)

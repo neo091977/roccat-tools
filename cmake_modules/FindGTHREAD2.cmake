@@ -1,0 +1,21 @@
+# Stefan Achatz 2012
+#
+# Tries to find libgthread-2.0 and sets following variables according to found capabilities:
+#
+# GTHREAD2_FOUND
+# GTHREAD2_LIBRARIES
+
+FIND_PACKAGE(PkgConfig)
+PKG_CHECK_MODULES(PKG_GTHREAD2 gthread-2.0)
+
+FIND_LIBRARY(GTHREAD2_LIBRARIES gthread-2.0
+  HINTS ${PKG_GTHREAD2_LIBRARY_DIRS}
+)
+
+IF(GTHREAD2_LIBRARIES)
+  SET(GTHREAD2_FOUND true)
+ENDIF()
+
+IF(GTHREAD2_FIND_REQUIRED AND NOT GTHREAD2_FOUND)
+  MESSAGE(FATAL_ERROR "Could not find GTHREAD2")
+ENDIF()

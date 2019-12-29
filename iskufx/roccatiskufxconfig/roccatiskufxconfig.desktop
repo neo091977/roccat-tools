@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=IskuFX config
+Name[de]=IskuFX Konfiguration
+Comment=Modify Roccat IskuFX device settings
+Comment[de]=Roccat IskuFX Einstellungen ändern
+Type=Application
+Exec=roccatiskufxconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

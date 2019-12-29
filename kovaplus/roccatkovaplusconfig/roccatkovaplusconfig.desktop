@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Kova[+] config
+Name[de]=Kova[+] Konfiguration
+Comment=Modify Roccat Kova[+] device settings
+Comment[de]=Roccat Kova[+] Einstellungen ändern
+Type=Application
+Exec=roccatkovaplusconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

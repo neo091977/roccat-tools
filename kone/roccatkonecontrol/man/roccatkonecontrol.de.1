@@ -1,0 +1,93 @@
+.\" Process this file with
+.\" groff -man -Tutf8 roccatkonecontrol.1
+.\"
+.TH ROCCATKONECONTROL 1 "JULY 2010" "Stefan Achatz" "Benutzerhandbücher"
+.SH NAME
+roccatkonecontrol \- Ein Hilfsprogramm um die erweiterten Funktionen der Kone zu nutzen.
+.SH SYNTAX
+.B roccatkonecontrol
+[
+.B -cfghpv
+] [
+.B -a
+.i NUMMER
+] [
+.B -l
+.I NUMMER
+] [
+.B -r
+.I DATEINAME
+] [
+.B -s
+.I NUMMER
+] [
+.B -w
+.I DATEINAME
+] [
+.BI --activate-profile= NUMMER
+] [
+.B --actual-cpi
+] [
+.B --actual-profile
+] [
+.B --calibrate
+] [
+.B --help
+] [
+.BI --load= NUMMER
+] [
+.B --path
+] [
+.B --read-firmware
+] [
+.BI --read-rmp= DATEINAME
+] [
+.B --read-weight
+] [
+.BI --save= NUMMER
+] [
+.B --version
+] [
+.BI --write-rmp= DATEINAME
+]
+.SH BESCHREIBUNG
+Diese Konsolenanwendung ermöglicht es die erweiterten Funktionen der Kone zu nutzen.
+.SH OPTIONEN
+.IP "-h, --help"
+Zeige die Hilfeliste.
+.IP "-a, --activate-profile=NUMMER"
+Aktiviert das angegebene Profil. Diese Aktion setzt das startup-Profil der Kone.
+Das heisst dieses Profil ist aktiv wenn die Kone gestartet wird.
+.IP "--actual-cpi"
+Gibt die aktuelle CPI Einstellung aus.
+.IP "--actual-profile"
+Gibt die Nummer des aktiven Profils aus.
+.IP "-c, --calibrate"
+Kalibriere die Kone. Die Anwendung erbittet eine Bestätigung des Nutzers. 
+.IP "-f, --read-firmware"
+Gibt die Firmwareversion der Kone aus.
+.IP "-g, --read-weight"
+Gibt das Gewicht des eingesetzten Fast-Clip-Weight der Kone aus.
+.IP "-l, --load=NUMMER"
+Lädt das Profil aus der Maus, sowie das dazugehörige hinterlegte Profil.
+Sollten diese sich unterscheiden wird eine Warnung ausgegeben und das Mausprofil
+weiterverwendet.
+.IP "-p, --path"
+Liefert den sysfs-Pfad zurück.
+.IP "-r, --read-rmp=DATEINAME"
+Lies eine rmp-Datei in den Speicher.
+.IP "-s, --save=NUMMER"
+Speichert das Profil aus dem Speicher in der Maus und im hinterlegten Profil.
+.IP "-v, --version"
+Zeige die Programmversion.
+.IP "-w, --write-rmp=DATEINAME"
+Schreibe das im Speicher enthaltene Profil als rmp-Datei.
+.SH BEISPIELE
+.IP "roccatkonecontrol -r profile.rmp -s 1"
+Liest das Profil aus der Datei
+.B profile.rmp
+und speichert das Ergebnis als Profil Nummer
+.B 1
+in der Maus, sowie im hinterlegten Profil.
+.SH AUTOR
+Stefan Achatz <erazor_de@users.sourceforge.net>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+  "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node name="/org/roccat/Savu">
+  <interface name="org.roccat.Savu">
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="savu_dbus_server_cb"/>
+    <method name="OpenGui">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+    </method>
+    <method name="ProfileDataChangedOutside">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+      <arg type="y" name="number" direction="in"/>
+    </method>
+    <method name="ProfileChangedOutside">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+      <arg type="y" name="number" direction="in"/>
+    </method>
+    <method name="ConfigurationChangedOutside">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+    </method>
+    <signal name="ProfileChanged">
+      <arg type="y" name="number"/>
+    </signal>
+  </interface>
+</node>

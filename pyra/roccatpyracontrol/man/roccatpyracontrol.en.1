@@ -1,0 +1,73 @@
+.\" Process this file with
+.\" groff -man -Tutf8 roccatpyracontrol.1
+.\"
+.TH ROCCATPYRACONTROL 1 "AUGUST 2010" "Stefan Achatz" "User Manuals"
+.SH NAME
+roccatpyracontrol \- a tool to roccatcontrol the extended capabilities of Pyra mouse
+.SH SYNOPSIS
+.B roccatpyracontrol
+[
+.B -fhv
+] [
+.B -a
+.I NUMBER
+] [
+.B -l
+.I NUMBER
+] [
+.B -r
+.I FILENAME
+] [
+.B -s
+.I NUMBER
+] [
+.B -w
+.I FILENAME
+] [
+.BI --activate-profile= NUMBER
+] [
+.B --actual-profile
+] [
+.B --help
+] [
+.BI --load= NUMMER
+] [
+.B --read-firmware
+] [
+.BI --read-rmp= FILENAME
+] [
+.BI --reset
+] [
+.BI --save= NUMMER
+] [
+.B --version
+] [
+.BI --write-rmp= FILENAME
+]
+.SH DESCRIPTION
+This console application lets you modify profiles of a Pyra mouse.
+.SH OPTIONS
+.IP "-h, --help"
+Give the help list.
+.IP "-a, --activate-profile=NUMBER"
+Activates the given profile. Please mind that this permanently sets the startup
+profile. That means the given profile will be active each time the Pyra starts up.
+.IP "--actual-profile"
+Returns the number of the active profile.
+.IP "-f, --read-firmware"
+Returns the firmware version of the Pyra.
+.IP "-l, --load=NUMBER"
+Loads the profile from mouse and deposits it in memory. If they differ a warning
+is given and the deposited profile is used further.
+.IP "-r, --read-rmp=FILENAME"
+Reads an rmp-file into memory.
+.IP "--reset"
+Resets the device to factory default settings.
+.IP "-s, --save=NUMBER"
+Saves the profile from memory to mouse and deposit.
+.IP "-v, --version"
+Print program version.
+.IP "-w, --write-rmp=FILENAME"
+Write the profile from memory as rmp-file.
+.SH AUTHOR
+Stefan Achatz <erazor_de@users.sourceforge.net>

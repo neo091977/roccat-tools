@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+  "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node name="/org/roccat/Tyon">
+  <interface name="org.roccat.Tyon">
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="tyon_dbus_server_cb"/>
+    <method name="OpenGui">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+    </method>
+    <method name="ProfileDataChangedOutside">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+      <arg type="y" name="number" direction="in"/>
+    </method>
+    <method name="TalkEasyshift">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+      <arg type="y" name="state" direction="in"/>
+    </method>
+    <method name="TalkEasyshiftLock">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+      <arg type="y" name="state" direction="in"/>
+    </method>
+    <method name="TalkEasyaim">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+      <arg type="y" name="state" direction="in"/>
+    </method>
+    <method name="TalkfxSetLedRgb">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+      <arg type="u" name="effect" direction="in"/>
+      <arg type="u" name="ambient_color" direction="in"/>
+      <arg type="u" name="event_color" direction="in"/>
+    </method>
+    <method name="TalkfxRestoreLedRgb">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+    </method>
+    <method name="GfxSetLedRgb">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+      <arg type="y" name="index" direction="in"/>
+      <arg type="u" name="color" direction="in"/>
+    </method>
+    <method name="GfxGetLedRgb">
+      <arg type="y" name="index" direction="in"/>
+      <arg type="u" name="color" direction="out"/>
+    </method>
+    <method name="GfxUpdate">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+    </method>
+    <method name="ProfileChangedOutside">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+      <arg type="y" name="number" direction="in"/>
+    </method>
+    <method name="ConfigurationChangedOutside">
+      <annotation name="org.freedesktop.DBus.GLib.NoReply" value="yes"/>
+    </method>
+    <signal name="ProfileChanged">
+      <arg type="y" name="number"/>
+    </signal>
+  </interface>
+</node>

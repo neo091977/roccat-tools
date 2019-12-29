@@ -1,0 +1,114 @@
+.\" Process this file with
+.\" groff -man -Tutf8 roccatkonepuremilitarycontrol.1
+.\"
+.TH ROCCATKONEPUREMILITARYCONTROL 1 "MAY 2014" "Stefan Achatz" "Benutzerhandbücher"
+.SH NAME
+roccatkonepuremilitarycontrol \- Ein Hilfsprogramm um die erweiterten Funktionen der Roccat
+KonePureMilitary zu nutzen.
+.SH SYNTAX
+.B roccatkonepuremilitarycontrol
+[
+.B -fhv
+] [
+.B -a
+.i NUMMER
+] [
+.B -l
+.I NUMMER
+] [
+.B -r
+.I DATEINAME
+] [
+.B -s
+.I NUMMER
+] [
+.B -w
+.I DATEINAME
+] [
+.BI --activate-profile= NUMMER
+] [
+.B --actual-profile
+] [
+.B --driver-off
+] [
+.B --driver-on
+] [
+.BI --firmware= DATEINAME
+] [
+.B --help
+] [
+.BI --load= NUMMER
+] [
+.B --read-firmware
+] [
+.BI --read-rmp= DATEINAME
+] [
+.BI --reset
+] [
+.BI --save= NUMMER
+] [
+.B --sensor-read
+] [
+.BI --sensor-register= NUMMER
+] [
+.BI --sensor-write= WERT
+] [
+.BI --srom= DATEINAME
+] [
+.B --version
+] [
+.BI --write-rmp= DATEINAME
+]
+.SH BESCHREIBUNG
+Diese Konsolenanwendung ermöglicht es die erweiterten Funktionen der Roccat
+KonePureMilitary zu nutzen.
+.SH OPTIONEN
+.IP "-h, --help"
+Zeige die Hilfeliste.
+.IP "-a, --activate-profile=NUMMER"
+Aktiviert das angegebene Profil. Das aktive Profil ist permanent, d.h. ist zugleich
+das Startup-Profil der KonePureMilitary.
+.IP "--actual-profile"
+Gibt die Nummer des aktiven Profils aus.
+.IP "--driver-off"
+Deaktiviert Windows Treiberstatus. 
+.IP "--driver-on"
+Aktiviert Windows Treiberstatus.
+.IP "--firmware=DATEINAME"
+Aktualisiert die Gerätefirmware mit der angegebenen Datei. Im Fehlerfall kann
+das Update wiederholt werden.
+.IP "-f, --read-firmware"
+Gibt die Firmwareversion der KonePureMilitary aus.
+.IP "-l, --load=NUMMER"
+Lädt das Profil aus der Maus, sowie das dazugehörige hinterlegte Profil.
+Sollten diese sich unterscheiden wird eine Warnung ausgegeben und das Mausprofil
+weiterverwendet.
+.IP "-r, --read-rmp=DATEINAME"
+Lies eine rmp-Datei in den Speicher. 
+.IP "--reset"
+Setzt das Gerät auf Standardeinstellungen zurück.
+.IP "-s, --save=NUMMER"
+Speichert das Profil aus dem Speicher in der Maus und im hinterlegten Profil.
+.IP "--sensor-read"
+Liest den Wert des mit --sensor-register angegeben Sensor Registers.
+.IP "--sensor-register=NUMMER"
+Selektiert das Sensor Register zum lesen und schreiben.
+.IP "--sensor-write=WERT"
+Schreibt den gegebenen Wert in das mit --sensor-register angegebene Sensor Register.
+.IP "--srom=DATEINAME"
+Aktualisiert das Sensorrom mit der angegeben Datei.
+.IP "-v, --version"
+Zeige die Programmversion.
+.IP "-w, --write-rmp=DATEINAME"
+Schreibe das im Speicher enthaltene Profil als rmp-Datei.
+.SH BEISPIELE
+.IP "roccatkonepuremilitarycontrol -r profile.rmp -s 1"
+Liest das Profil aus der Datei
+.B profile.rmp
+und speichert das Ergebnis als Profil Nummer
+.B 1
+in der Maus, sowie im hinterlegten Profil.
+.IP "roccatkonepuremilitarycontrol --sensor-register 0x2a --sensor-read"
+Liest die SROM_ID aus dem Sensor.
+.SH AUTOR
+Stefan Achatz <erazor_de@users.sourceforge.net>

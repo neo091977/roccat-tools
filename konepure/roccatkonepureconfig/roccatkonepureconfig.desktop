@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=KonePure config
+Name[de]=KonePure Konfiguration
+Comment=Modify Roccat KonePure device settings
+Comment[de]=Roccat KonePure Einstellungen ändern
+Type=Application
+Exec=roccatkonepureconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Sova config
+Name[de]=Sova Konfiguration
+Comment=Modify Roccat Sova device settings
+Comment[de]=Roccat Sova Einstellungen ändern
+Type=Application
+Exec=roccatsovaconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

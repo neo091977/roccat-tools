@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Pyra config
+Name[de]=Pyra Konfiguration
+Comment=Modify Roccat Pyra device settings
+Comment[de]=Roccat Pyra Einstellungen ändern
+Type=Application
+Exec=roccatpyraconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

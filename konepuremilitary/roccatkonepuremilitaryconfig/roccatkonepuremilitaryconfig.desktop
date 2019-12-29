@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=KonePureMilitary config
+Name[de]=KonePureMilitary Konfiguration
+Comment=Modify Roccat KonePureMilitary device settings
+Comment[de]=Roccat KonePureMilitary Einstellungen ändern
+Type=Application
+Exec=roccatkonepuremilitaryconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

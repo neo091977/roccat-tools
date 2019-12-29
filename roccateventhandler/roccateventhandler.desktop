@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Roccat
+Name[de]= Roccat
+Comment=Roccat eventhandler
+Comment[de]=Roccat Ereignissteuerung
+Type=Application
+Exec=roccateventhandler
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

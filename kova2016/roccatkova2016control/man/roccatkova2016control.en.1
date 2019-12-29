@@ -1,0 +1,77 @@
+.\" Process this file with
+.\" groff -man -Tutf8 roccatkova2016control.1
+.\"
+.TH ROCCATKOVA2016CONTROL 1 "January 2016" "Stefan Achatz" "User Manuals"
+.SH NAME
+roccatkova2016control \- a tool to control the extended capabilities of a Roccat
+Kova2016 mouse.
+.SH SYNOPSIS
+.B kova2016control
+[
+.B -fhv
+] [
+.B -a
+.I NUMBER
+] [
+.BI --activate-profile= NUMBER
+] [
+.B --actual-profile
+] [
+.B --driver-off
+] [
+.B --driver-on
+] [
+.BI --firmware= FILENAME
+] [
+.B --help
+] [
+.B --read-firmware
+] [
+.BI --reset
+] [
+.B --sensor-read
+] [
+.BI --sensor-register= NUMBER
+] [
+.BI --sensor-write= VALUE
+] [
+.B --version
+]
+.SH DESCRIPTION
+This console application lets you modify profiles of a Roccat Kova2016 mouse.
+.SH OPTIONS
+.IP "-h, --help"
+Give the help list.
+.IP "-a, --activate-profile=NUMBER"
+Activates the given profile. Please mind that this permanently sets the startup
+profile. That means the given profile will be active each time the Kova2016 starts up.
+.IP "--actual-profile"
+Returns the number of the active profile.
+.IP "--driver-off"
+Deactivates Windows driver state.
+.IP "--driver-on"
+Activates Windows driver state.
+.IP "--firmware=FILENAME"
+Updates the devices firmware with the given Image file. In case of an error this
+process can be repeated.
+.IP "-f, --read-firmware"
+Returns the firmware version of the Kova2016.
+.IP "--reset"
+Resets the device to factory default settings.
+.IP "--sensor-read"
+Reads a value from sensors register given with --sensor-register.
+.IP "--sensor-register=NUMBER"
+Selects a sensor register for reading and writing.
+.IP "--sensor-write=VALUE"
+Write the given value in the sensor register given with --sensor-register.
+.IP "-v, --version"
+Print program version.
+.SH EXAMPLES
+.IP "kova2016control -r profile.rmp -s 1"
+Reads the profile from file
+.B profile.rmp
+and saves the result as profile number
+.B 1
+in the mouse and the deposited profile.
+.SH AUTHOR
+Stefan Achatz <erazor_de@users.sourceforge.net>

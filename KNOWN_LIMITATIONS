@@ -1,0 +1,23 @@
+* The AlienFX compatible devices report all their lights, but support only one color
+  for all. That's a function of the Windows software but also the firmware.
+  For example the Nyth reports both it's lights but only the value of index 1 is
+  applied to both.
+  In Gfx I'm also reporting each light individually, but can't do anything to lift
+  the firmware restrictions.
+  Known to be valid for:
+  * Nyth v1.35
+  * Kova2016 v1.16
+* Kiro report descriptor reports different sizes than the Windows software sends/receives.
+  Known to be valid for:
+  * Kiro v1.20
+* I can't test TalkFX so this feature will not work. Use Gfx instead.
+  Known to be valid for:
+  * Kiro v1.20
+  * Kova2016 v1.16
+  * Nyth v1.35
+* The Rmp file format for Swarm based devices is useless for data transfer. Timer can't be
+  exported
+  Known to be valid for:
+  * Kiro v1.20
+  * Kova2016 v1.16
+  * Nyth v1.35

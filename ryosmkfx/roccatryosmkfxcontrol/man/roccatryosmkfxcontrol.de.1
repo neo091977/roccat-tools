@@ -1,0 +1,104 @@
+.\" Process this file with
+.\" groff -man -Tutf8 roccatryosmkfxcontrol.1
+.\"
+.TH ROCCATRYOSMKFXCONTROL 1 "MÄRZ 2016" "Stefan Achatz" "Benutzerhandbücher"
+.SH NAME
+roccatryosmkfxcontrol \- Ein Hilfsprogramm um die erweiterten Funktionen der Roccat
+Ryos MK FX Serie zu nutzen.
+.SH SYNTAX
+.B roccatryosmkfxcontrol
+[
+.B -fhv
+] [
+.B -a
+.i NUMMER
+] [
+.B -d
+.i NUMMER
+] [
+.B -l
+.I NUMMER
+] [
+.B -r
+.I DATEINAME
+] [
+.B -s
+.I NUMMER
+] [
+.B -w
+.I DATEINAME
+] [
+.BI --activate-profile= NUMMER
+] [
+.B --actual-profile
+] [
+.BI --default-profile= NUMMER
+] [
+.B --driver-off
+] [
+.B --driver-on
+] [
+.BI --firmware= DATEINAME
+] [
+.B --help
+] [
+.BI --load= NUMMER
+] [
+.B --read-firmware
+] [
+.BI --read-rkp= DATEINAME
+] [
+.BI --reset
+] [
+.BI --save= NUMMER
+] [
+.B --version
+] [
+.BI --write-rkp= DATEINAME
+]
+.SH BESCHREIBUNG
+Diese Konsolenanwendung ermöglicht es die erweiterten Funktionen der Roccat
+Ryos MK FX Serie zu nutzen.
+.SH OPTIONEN
+.IP "-h, --help"
+Zeige die Hilfeliste.
+.IP "-a, --activate-profile=NUMMER"
+Aktiviert das angegebene Profil. Das aktive Profil ist permanent, d.h. ist zugleich
+das Startup-Profil der Ryos.
+.IP "--actual-profile"
+Gibt die Nummer des aktiven Profils aus.
+.IP "-d, --default-profile=NUMMER"
+Setzt das Standardprofil das aktiviert wird wenn keine gamefile Einstellung aktiv
+ist. Ein Wert von 0 schaltet diese Funktion aus.
+.IP "--driver-off"
+Deaktiviert Windows Treiberstatus. 
+.IP "--driver-on"
+Aktiviert Windows Treiberstatus.
+.IP "--firmware=DATEINAME"
+Aktualisiert die Gerätefirmware mit der angegebenen Datei. Im Fehlerfall kann
+das Update wiederholt werden.
+.IP "-f, --read-firmware"
+Gibt die Firmwareversion der Ryos aus.
+.IP "-l, --load=NUMMER"
+Lädt das Profil aus der Ryos, sowie das dazugehörige hinterlegte Profil.
+Sollten diese sich unterscheiden wird eine Warnung ausgegeben und das Tastaturprofil
+weiterverwendet.
+.IP "-r, --read-rkp=DATEINAME"
+Lies eine rkp-Datei in den Speicher. 
+.IP "--reset"
+Setzt das Gerät auf Standardeinstellungen zurück.
+.IP "-s, --save=NUMMER"
+Speichert das Profil aus dem Speicher in der Tastatur und im hinterlegten Profil.
+.IP "-v, --version"
+Zeige die Programmversion.
+.IP "-w, --write-rkp=DATEINAME"
+Schreibe das im Speicher enthaltene Profil als rkp-Datei.
+.SH BEISPIELE
+.IP "roccatryosmkfxcontrol -r profile.rkp -s 1"
+Liest das Profil aus der Datei
+.B profile.rkp
+und speichert das Ergebnis als Profil Nummer
+.B 1
+in der Tastatur, sowie im hinterlegten Profil.
+.SH AUTOR
+Stefan Achatz <erazor_de@users.sourceforge.net>

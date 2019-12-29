@@ -1,0 +1,2 @@
+#!/bin/sh
+yum install gcc cmake dbus-glib-devel gtk2-devel libgudev1-devel libX11-devel

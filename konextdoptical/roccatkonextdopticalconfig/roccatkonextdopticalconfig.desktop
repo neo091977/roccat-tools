@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=KoneXTDOptical config
+Name[de]=KoneXTDOptical Konfiguration
+Comment=Modify Roccat KoneXTDOptical device settings
+Comment[de]=Roccat KoneXTDOptical Einstellungen ändern
+Type=Application
+Exec=roccatkonextdopticalconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

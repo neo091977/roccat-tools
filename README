@@ -1,0 +1,73 @@
+* Contents
+
+  This archive contains
+  
+  * roccateventhandler
+  
+    A eventhandler that takes care of displaying OSD events and handles
+    quicklaunching and talk events.
+
+  * Icons and sounds
+  
+    These are used by device specific software.
+
+  * DEVICE specific software
+  
+    * roccatDEVICEcontrol
+  
+      A console application mainly meant as helper for background tasks.
+      For basic usage information on roccatDEVICEcontrol please read the manpage.
+    
+    * roccatDEVICEconfig
+    
+      Graphical user interfaces to modify the profiles of your devices. You
+      should find them in the settings folder of your window manager, or you can
+      call them from the console.
+      
+* Notes on Macro handling
+
+  * Windows drivers store their macros in folders like these:
+  
+    "%ProgramFiles%\ROCCAT\Arvo Keyboard\config\macro.ini"
+    %APPDATA%\ROCCAT\Kone\config\macro.ini
+    "%ProgramFiles%\ROCCAT\Kone[+] Mouse\config\Preset_sequence.dat"
+    "%ProgramFiles%\ROCCAT\Kova[+] Mouse\config\Kova_sequence.dat"
+    "%ProgramFiles%\ROCCAT\Pyra Mouse\config\Pyra_sequence.dat"
+    
+    I'm providing a unified method of storing and handling macros.
+    So you can use a single macro with any device you want without the need for
+    defining it in multiple applications.
+    
+* Known issues
+
+  * If you get annoying SHIFT_L key events when entering keys in DEVICEconfig
+    you might have a video application like xine running which tries to disable
+    the screensaver in the most stupid way. You have to switch off this
+    functionality or close the culprit.
+    
+  * If some key events don't show up in DEVICEconfig then you might have
+    software like xbindkeys running. You have to turn off these tools for
+    editing keys or macros in DEVICEconfig. Another possibility is that my
+    translation table is missing some keys (in fact at this time i only support
+    a standard 105-keys keyboard)
+
+* Copyright notices
+
+  * The sound files and the Roccat logo are property of Roccat and are used
+    with their approval.
+
+  * Code and data I'm not the author of is commented with a QUOTE tag.
+    Source and copyright info are stated there.   
+
+* Help make it better
+
+  If you have problems, ideas, questions etc. go to
+  
+  http://sourceforge.net/projects/roccat/support
+  
+  or if you don't want to create a sourceforge account mail me directly at
+  
+  erazor_de@users.sourceforge.net
+  
+  and tell me.
+  

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Arvo config
+Name[de]=Arvo Konfiguration
+Comment=Modify Roccat Arvo device settings
+Comment[de]=Roccat Arvo Einstellungen ändern
+Type=Application
+Exec=roccatarvoconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

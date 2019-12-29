@@ -1,0 +1,18 @@
+# Rules for Roccat Kone gaming mouse.
+# These rules have to be applied after 50-udev-default.rules for mode changes not to be overridden.
+
+# If generic hid driver tries to bind: Load module and transfer mouse and keyboard part under kone hid driver control.
+SUBSYSTEM=="hid", DRIVER=="generic-usb", ATTRS{idVendor}=="1e7d", ATTRS{idProduct}=="2ced", ACTION=="add", RUN+="/bin/sh -c '/sbin/modprobe kone || /sbin/modprobe hid-roccat-kone; if test -d /sys/bus/hid/drivers/kone; then /bin/echo -n %k >/sys/bus/hid/drivers/generic-usb/unbind && /bin/echo -n %k >/sys/bus/hid/drivers/kone/bind; fi'"
+SUBSYSTEM=="hid", DRIVER=="hid-generic", ATTRS{idVendor}=="1e7d", ATTRS{idProduct}=="2ced", ACTION=="add", RUN+="/bin/sh -c '/sbin/modprobe kone || /sbin/modprobe hid-roccat-kone; if test -d /sys/bus/hid/drivers/kone; then /bin/echo -n %k >/sys/bus/hid/drivers/hid-generic/unbind && /bin/echo -n %k >/sys/bus/hid/drivers/kone/bind; fi'"
+
+# Changing access rights of devices and sysfs attributes.
+# If group roccat does not exist, group root is used.
+
+# Transfer both evdev event devices to user group roccat.
+SUBSYSTEM=="input",  ACTION=="add", ATTRS{idVendor}=="1e7d", ATTRS{idProduct}=="2ced", KERNEL=="event[0-9]*", GROUP="roccat", MODE="0660"
+
+# Transfer roccat event device and drivers sysfs attributes to user group roccat.
+# On kernels prior to 2.6.38 the event device is of class roccat, from
+# 2.6.38 onwards class is named after device name
+SUBSYSTEM=="roccat", ACTION=="add", ATTRS{idVendor}=="1e7d", ATTRS{idProduct}=="2ced", GROUP="roccat", MODE="0660", RUN +="/bin/sh -c 'ROCCAT_PATH=$(roccatkonecontrol -p); if test $? -eq 0; then chgrp roccat $ROCCAT_PATH/*; fi'"
+SUBSYSTEM=="kone", ACTION=="add", ATTRS{idVendor}=="1e7d", ATTRS{idProduct}=="2ced", GROUP="roccat", MODE="0660", RUN +="/bin/sh -c 'ROCCAT_PATH=$(roccatkonecontrol -p); if test $? -eq 0; then chgrp roccat $ROCCAT_PATH/*; fi'"

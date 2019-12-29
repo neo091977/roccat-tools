@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Suora config
+Name[de]=Suora Konfiguration
+Comment=Modify Roccat Suora device settings
+Comment[de]=Roccat Suora Einstellungen ändern
+Type=Application
+Exec=roccatsuoraconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

@@ -1,0 +1,46 @@
+.\" Process this file with
+.\" groff -man -Tutf8 roccatkirocontrol.1
+.\"
+.TH ROCCATKIROCONTROL 1 "February 2016" "Stefan Achatz" "User Manuals"
+.SH NAME
+roccatkirocontrol \- a tool to control the extended capabilities of a Roccat
+Kiro mouse.
+.SH SYNOPSIS
+.B kirocontrol
+[
+.B -fhv
+] [
+.B --driver-off
+] [
+.B --driver-on
+] [
+.BI --firmware= FILENAME
+] [
+.B --help
+] [
+.B --read-firmware
+] [
+.BI --reset
+] [
+.B --version
+]
+.SH DESCRIPTION
+This console application lets you modify profiles of a Roccat Kiro mouse.
+.SH OPTIONS
+.IP "-h, --help"
+Give the help list.
+.IP "--driver-off"
+Deactivates Windows driver state.
+.IP "--driver-on"
+Activates Windows driver state.
+.IP "--firmware=FILENAME"
+Updates the devices firmware with the given Image file. In case of an error this
+process can be repeated.
+.IP "-f, --read-firmware"
+Returns the firmware version of the Kiro.
+.IP "--reset"
+Resets the device to factory default settings.
+.IP "-v, --version"
+Print program version.
+.SH AUTHOR
+Stefan Achatz <erazor_de@users.sourceforge.net>

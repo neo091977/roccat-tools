@@ -1,0 +1,91 @@
+.\" Process this file with
+.\" groff -man -Tutf8 roccatkovapluscontrol.1
+.\"
+.TH ROCCATKOVAPLUSCONTROL 1 "JANUARY 2011" "Stefan Achatz" "Benutzerhandbücher"
+.SH NAME
+roccatkovapluscontrol \- Ein Hilfsprogramm um die erweiterten Funktionen der Roccat
+Kova[+] zu nutzen.
+.SH SYNOPSIS
+.B roccatkovapluscontrol
+[
+.B -fhv
+] [
+.B -a
+.i NUMMER
+] [
+.B -l
+.I NUMMER
+] [
+.B -r
+.I DATEINAME
+] [
+.B -s
+.I NUMMER
+] [
+.B -w
+.I DATEINAME
+] [
+.BI --activate-profile= NUMMER
+] [
+.B --actual-profile
+] [
+.B --driver-off
+] [
+.B --driver-on
+] [
+.B --help
+] [
+.BI --load= NUMMER
+] [
+.B --read-firmware
+] [
+.BI --read-rmp= DATEINAME
+] [
+.BI --reset
+] [
+.BI --save= NUMMER
+] [
+.B --version
+] [
+.BI --write-rmp= DATEINAME
+]
+.SH BESCHREIBUNG
+Diese Konsolenanwendung ermöglicht es die erweiterten Funktionen der Roccat
+Kova[+] zu nutzen.
+.SH OPTIONEN
+.IP "-h, --help"
+Zeige die Hilfeliste.
+.IP "-a, --activate-profile=NUMMER"
+Aktiviert das angegebene Profil. Das aktive Profil ist permanent, d.h. ist zugleich
+das Startup-Profil der Kova[+].
+.IP "--actual-profile"
+Gibt die Nummer des aktiven Profils aus.
+.IP "--driver-off"
+Deaktiviert Windows Treiberstatus. 
+.IP "--driver-on"
+Aktiviert Windows Treiberstatus.
+.IP "-f, --read-firmware"
+Gibt die Firmwareversion der Kova[+] aus.
+.IP "-l, --load=NUMMER"
+Lädt das Profil aus der Maus, sowie das dazugehörige hinterlegte Profil.
+Sollten diese sich unterscheiden wird eine Warnung ausgegeben und das Mausprofil
+weiterverwendet.
+.IP "-r, --read-rmp=DATEINAME"
+Lies eine rmp-Datei in den Speicher.
+.IP "--reset"
+Setzt das Gerät auf Standardeinstellungen zurück.
+.IP "-s, --save=NUMMER"
+Speichert das Profil aus dem Speicher in der Maus und im hinterlegten Profil.
+.IP "-v, --version"
+Zeige die Programmversion.
+.IP "-w, --write-rmp=DATEINAME"
+Schreibe das im Speicher enthaltene Profil als rmp-Datei.
+.SH BEISPIELE
+.IP "roccatkovaepluscontrol -r profile.rmp -s 1"
+Liest das Profil aus der Datei
+.B profile.rmp
+und speichert das Ergebnis als Profil Nummer
+.B 1
+in der Maus, sowie im hinterlegten Profil.
+.SH AUTOR
+Stefan Achatz <erazor_de@users.sourceforge.net>

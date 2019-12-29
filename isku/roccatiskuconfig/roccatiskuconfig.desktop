@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Isku config
+Name[de]=Isku Konfiguration
+Comment=Modify Roccat Isku device settings
+Comment[de]=Roccat Isku Einstellungen ändern
+Type=Application
+Exec=roccatiskuconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

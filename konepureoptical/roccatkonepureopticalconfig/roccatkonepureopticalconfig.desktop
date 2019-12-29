@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=KonePureOptical config
+Name[de]=KonePureOptical Konfiguration
+Comment=Modify Roccat KonePureOptical device settings
+Comment[de]=Roccat KonePureOptical Einstellungen ändern
+Type=Application
+Exec=roccatkonepureopticalconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

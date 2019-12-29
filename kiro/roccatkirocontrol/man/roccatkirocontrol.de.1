@@ -1,0 +1,47 @@
+.\" Process this file with
+.\" groff -man -Tutf8 roccatkirocontrol.1
+.\"
+.TH ROCCATKIROCONTROL 1 "Februar 2016" "Stefan Achatz" "Benutzerhandbücher"
+.SH NAME
+roccatkirocontrol \- Ein Hilfsprogramm um die erweiterten Funktionen der Roccat
+Kiro zu nutzen.
+.SH SYNTAX
+.B kirocontrol
+[
+.B -fhv
+] [
+.B --driver-off
+] [
+.B --driver-on
+] [
+.BI --firmware= DATEINAME
+] [
+.B --help
+] [
+.B --read-firmware
+] [
+.BI --reset
+] [
+.B --version
+]
+.SH BESCHREIBUNG
+Diese Konsolenanwendung ermöglicht es, die erweiterten Funktionen der Roccat
+Kiro zu nutzen.
+.SH OPTIONEN
+.IP "-h, --help"
+Zeige die Hilfeliste.
+.IP "--driver-off"
+Deaktiviert Windows Treiberstatus. 
+.IP "--driver-on"
+Aktiviert Windows Treiberstatus.
+.IP "--firmware=DATEINAME"
+Aktualisiert die Gerätefirmware mit der angegebenen Datei. Im Fehlerfall kann
+das Update wiederholt werden.
+.IP "-f, --read-firmware"
+Gibt die Firmwareversion der Kiro aus.
+.IP "--reset"
+Setzt das Gerät auf Standardeinstellungen zurück.
+.IP "-v, --version"
+Zeige die Programmversion.
+.SH AUTOR
+Stefan Achatz <erazor_de@users.sourceforge.net>

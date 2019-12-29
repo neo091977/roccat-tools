@@ -1,0 +1,8 @@
+#!/bin/sh
+ldconfig
+touch --no-create /usr/share/icons/hicolor
+groupadd --force --system roccat
+mkdir --parents /var/lib/roccat
+chown root:roccat /var/lib/roccat
+chmod 2770 /var/lib/roccat
+udevadm control --reload-rules

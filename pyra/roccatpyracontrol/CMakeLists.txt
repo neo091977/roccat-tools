@@ -1,0 +1,14 @@
+ADD_EXECUTABLE(roccatpyracontrol pyracontrol.c)
+
+TARGET_LINK_LIBRARIES(roccatpyracontrol
+  libroccatpyra
+  libroccat
+  ${GLIB2_LIBRARIES}
+)
+
+INSTALL(TARGETS roccatpyracontrol
+  DESTINATION bin
+  PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
+)
+
+ADD_SUBDIRECTORY(man)

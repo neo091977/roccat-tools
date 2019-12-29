@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Skeltr config
+Name[de]=Skeltr Konfiguration
+Comment=Modify Roccat Skeltr device settings
+Comment[de]=Roccat Skeltr Einstellungen ändern
+Type=Application
+Exec=roccatskeltrconfig
+Icon=roccat
+Terminal=false
+Categories=Settings;HardwareSettings;GTK;

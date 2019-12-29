@@ -1,0 +1,16 @@
+ADD_EXECUTABLE(roccatkonecontrol
+  konecontrol.c
+)
+
+TARGET_LINK_LIBRARIES(roccatkonecontrol
+  libroccatkone
+  libroccat
+  ${GLIB2_LIBRARIES}
+)
+
+INSTALL(TARGETS roccatkonecontrol
+  DESTINATION bin
+  PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
+)
+
+ADD_SUBDIRECTORY(man)
