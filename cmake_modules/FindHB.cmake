@@ -1,0 +1,29 @@
+# Juergen Berger 2019
+#
+# Tries to find libharfbuzz and sets following variables according to found capabilities:
+#
+# HB_FOUND
+# HB_INCLUDE_DIRS
+# HB_LIBRARIES
+
+FIND_PACKAGE(PkgConfig)
+PKG_CHECK_MODULES(PKG_HB harfbuzz)
+
+FIND_PATH(HB_INCLUDE_DIRS hb.h
+  HINTS
+    ${PKG_HB_INCLUDE_DIRS}
+    ${PKG_HB_INCLUDEDIR}
+  PATH_SUFFIXES harfbuzz
+)
+
+FIND_LIBRARY(HB_LIBRARIES harfbuzz
+  HINTS ${PKG_HB_LIBRARY_DIRS}
+)
+
+IF(PANGO_LIBRARIES AND HB_INCLUDE_DIRS)
+  SET(HB_FOUND true)
+ENDIF()
+
+IF(PANGO_FIND_REQUIRED AND NOT HB_FOUND)
+  MESSAGE(FATAL_ERROR "Could not find HARFBUZZ")
+ENDIF()
