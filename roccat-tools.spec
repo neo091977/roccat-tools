@@ -7,13 +7,13 @@
 %define default_gfx_plugindir %{_libdir}/gaminggear_plugins
 %{!?gfx_plugindir: %define gfx_plugindir %{default_gfx_plugindir}}
 
-%define default_luaversion 5.3.4
+%define default_luaversion 5.3.5
 %{!?luaversion: %define luaversion %{default_luaversion}}
 
 %global debug_package %{nil}
 
 Name: roccat
-Version: 5.8.0
+Version: 5.9.0
 Release: 1
 License: GPL
 Source: https://sourceforge.net/projects/roccat/files/roccat-tools/roccat-tools-%{version}.tar.bz2
