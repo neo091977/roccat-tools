@@ -120,7 +120,6 @@ Group: Applications/System
 %package ryosmk
 Requires: roccat
 Requires: lua = %{luaversion}
-Obsoletes: roccat-ryos
 Summary: Roccat Ryos MK userlandtools
 Group: Applications/System
 
